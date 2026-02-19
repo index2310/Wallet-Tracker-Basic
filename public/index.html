@@ -1,33 +1,27 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallet Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Price Tracker</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Wallet Tracker</h1>
+  <div class="container">
+    <h1>Coin Price Tracker</h1>
+    <form id="coinForm">
+      <label for="ticker">Masukkan Ticker Koin (misal: bitcoin):</label>
+      <input type="text" id="ticker" name="ticker" required>
+      <button type="submit">Cari Harga</button>
+    </form>
 
-    <h2>Check Crypto Price</h2>
-    <input type="text" id="crypto-symbol" placeholder="Enter Crypto Symbol (e.g., bitcoin)">
-    <button id="check-price">Check Price</button>
-    <p id="crypto-price">Loading...</p>
+    <div id="result">
+      <!-- Harga akan ditampilkan di sini -->
+    </div>
+  </div>
 
-    <ul id="wallets-list"></ul>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        document.getElementById('check-price').addEventListener('click', async () => {
-            const symbol = document.getElementById('crypto-symbol').value.toLowerCase();
-            const priceElement = document.getElementById('crypto-price');
-
-            try {
-                const response = await axios.get(`/api/crypto/${symbol}`);
-                priceElement.textContent = `The current price of ${symbol} is $${response.data.price}`;
-            } catch (error) {
-                priceElement.textContent = 'Error fetching price. Please check the symbol and try again.';
-            }
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
