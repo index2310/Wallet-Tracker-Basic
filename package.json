@@ -1,26 +1,15 @@
 {
-  "name": "contract-test-latest",
-  "version": "0.0.1",
-  "type": "module",
-  "main": "index.js",
-  "pear": {
-    "name": "contract-test-latest",
-    "type": "terminal"
+  "name": "wallet-tracker",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
   },
   "dependencies": {
-    "b4a": "^1.6.7",
-    "bare-ws": "2.0.3",
-    "compact-encoding": "^2.18.0",
-    "crypto": "npm:bare-node-crypto",
-    "fs": "npm:bare-node-fs",
-    "path": "npm:bare-node-path",
-    "protomux": "^3.10.1",
-    "trac-msb": "git+https://github.com/Trac-Systems/main_settlement_bus.git#5088921",
-    "trac-peer": "git+https://github.com/Trac-Systems/trac-peer.git#d108f52",
-    "trac-wallet": "1.0.1",
-    "util": "npm:bare-node-util"
+    "axios": "^1.13.5",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "ws": "^7.5.7"
   },
-  "overrides": {
-    "trac-wallet": "1.0.1"
-  }
+  "type": "module"
 }
