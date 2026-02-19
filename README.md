@@ -2,11 +2,10 @@
 ```
 trac18yfhy8yvzyw8ljatsfk0gkmf4wzrmq78v749usv323vvxsrhycyqn34fuj
 ```
-# Coin Price Track
-```
+## Coin Price Track 
+
 Simple beta app for local running to check current Crypto Prices using ticker and API Provided by CoinGecko
 Build using TracFork
-```
 
 # Coin Price Track
 ```Bash
