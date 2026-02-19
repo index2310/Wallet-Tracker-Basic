@@ -28,7 +28,7 @@ Build using TracFork
 ### 4️⃣ Open Apps on Local Browser
 
    - http://localhost:3001/
-
+```
 ---
 
 # Features
@@ -42,6 +42,8 @@ Build using TracFork
 | CoinGecko API | Market data source |
 
 ---
+
+
 
 ## 📸 Proof of Work
 
