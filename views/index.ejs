@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Tracker - Coin Price</title>
+</head>
+<body>
+    <h1>Current Coin Price</h1>
+    <p id="price"></p>
+
+    <script>
+        // Ambil data harga dari controller API
+        fetch('/api/coin/bitcoin')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('price').innerText = 'Bitcoin Price: $' + data.bitcoin.usd;
+            })
+            .catch(error => console.error('Error fetching price:', error));
+    </script>
+</body>
+</html>

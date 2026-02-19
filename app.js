@@ -1,24 +1,27 @@
+// app.js
 import express from 'express';
-import bodyParser from 'body-parser';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import WalletController from './controllers/WalletController.js';  // Pastikan jalur relatif ini benar
+import coinRoutes from './routes/coinRoutes.js'; // Pengimporan yang benar
 
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.json());
-app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')));
+// Middleware untuk memproses data JSON
+app.use(express.json());
 
-// Route API untuk dompet
-app.get('/api/wallets', WalletController.getAllWallets);
-app.post('/api/wallets', WalletController.addWallet);
-app.delete('/api/wallets/:id', WalletController.deleteWallet);
-app.put('/api/wallets/:id', WalletController.updateWallet);
+// Router untuk coin API
+app.use('/api', coinRoutes); // Pastikan coinRoutes sudah diekspor dengan default
 
-// Route API untuk melacak harga crypto
-app.get('/api/crypto/:cryptoSymbol', WalletController.getCryptoPrice);
+// Menyajikan view dengan EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(process.cwd(), 'views')); // Perbaikan path untuk ES module
 
+// Rute utama untuk menampilkan tampilan harga
+app.get('/', (req, res) => {
+    res.render('index'); // Menggunakan view index.ejs
+});
+
+// Menjalankan server
 app.listen(port, () => {
-    console.log(`Wallet Tracker is running on port ${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
