@@ -7,7 +7,13 @@ trac18yfhy8yvzyw8ljatsfk0gkmf4wzrmq78v749usv323vvxsrhycyqn34fuj
 Simple beta app for local running to check current Crypto Prices using ticker and API Provided by CoinGecko
 Build using TracFork
 ```
-# | Technology | Purpose |
+
+
+---
+# Features
+
+
+| Technology | Purpose |
 |------------|----------|
 | Node.js | Backend runtime |
 | Express | Web server |
